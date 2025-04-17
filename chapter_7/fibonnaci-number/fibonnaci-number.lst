@@ -1,0 +1,38 @@
+     1                                 %line 1+1 fibonnaci-number.asm
+     2                                 [section .data]
+     3                                  EXIT_SUCCESS equ 0
+     4                                  SYS_exit equ 60
+     5 00000000 0A000000                n dd 10
+     6 00000004 0000000000000000        ans dq 0
+     7 0000000C 0000000000000000        ppn dq 0
+     8 00000014 0000000000000000        pn dq 0
+     9 0000001C 0100000000000000        cn dq 1
+    10                                 [section .text]
+    11                                 [global _start]
+    12                                 
+    13                                 _start:
+    14                                 
+    15                                 
+    16                                 
+    17                                 
+    18                                 
+    19                                 
+    20                                 
+    21                                 
+    22 00000000 48C7C301000000          mov rbx, 1
+    23 00000007 8B0C25[00000000]        mov ecx, dword [n]
+    24                                 fibonnaciFormula:
+    25 0000000E 488B0425[00000000]      mov rax, qword [pn]
+    26 00000016 48890425[00000000]      mov qword [ppn], rax
+    27 0000001E 488B0425[00000000]      mov rax, qword [cn]
+    28 00000026 48890425[00000000]      mov qword [pn], rax
+    29 0000002E 488B0425[00000000]      mov rax, qword [pn]
+    30 00000036 48030425[00000000]      add rax, qword [ppn]
+    31 0000003E 48890425[00000000]      mov qword [cn], rax
+    32 00000046 E2C4                    loop fibonnaciFormula
+    33                                 last:
+    34 00000048 48890425[00000000]      mov qword [ans], rax
+    35 00000050 48C7C03C000000          mov rax, SYS_exit
+    36 00000057 48C7C700000000          mov rdi, EXIT_SUCCESS
+    37 0000005E 0F05                    syscall
+    38                                 
