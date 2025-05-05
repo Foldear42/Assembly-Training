@@ -1,2 +1,15 @@
 # Fichiers objets
 *.o
+
+# Fichiers listing générés par yasm
+*.lst
+
+# Exécutables Linux sans extension
+*
+
+# Mais pas les répertoires ni les fichiers avec extension
+!*/
+!*.*
+
+# Fichiers .out
+*.out
