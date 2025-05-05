@@ -1,0 +1,11 @@
+(gdb) ---------------------------------------------- 
+display variables 
+
+Result : 
+0x40200c:	1
+0x40200d:	0
+
+ 
+Warning: 'set logging off', an alias for the command 'set logging enabled', is deprecated.
+Use 'set logging enabled off'.
+
